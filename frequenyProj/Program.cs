@@ -41,14 +41,14 @@ namespace frequenyProj
             Console.WriteLine("***********  TOP 10 ********************");
             foreach (KeyValuePair<string, int> total in top10)
             {
-                Console.WriteLine("Camera: {0} Count: {1}", total.Key, total.Value);
+                Console.WriteLine("Camera Combo: {0} Count: {1}", total.Key, total.Value);
             }
 
 
             Console.WriteLine("\n\n*********** ALL RESULTS IN DECENDING ORDER ********************");
             foreach (KeyValuePair<string, int> total in sortedFrequencyCounts)
             {
-                Console.WriteLine("Camera: {0} Count: {1}", total.Key, total.Value);
+                Console.WriteLine("Count: {0} Camera Combo: {1} ", total.Value, total.Key);
             }
 
 

@@ -23,19 +23,19 @@ namespace frequenyProj
 
             foreach(var cameraList in allCameraListObjects)
             {
-                foreach (var camera in cameraList.cameras)
-                {
-                    if (frequencyCounts.ContainsKey(camera))
+                cameraList.cameras.Sort();
+                var stringKey = string.Join(",", cameraList.cameras);
+                    if (frequencyCounts.ContainsKey(stringKey))
                     {
-                        frequencyCounts[camera] = ++frequencyCounts[camera];
+                        frequencyCounts[stringKey] = ++frequencyCounts[stringKey];
                     }
                     else
                     {
-                        frequencyCounts.Add(camera, 1);
+                        frequencyCounts.Add(stringKey, 1);
                     }
                 }
-            }
-            var sortedFrequencyCounts = from v in frequencyCounts  orderby v.Key orderby v.Value descending select v;
+            
+            var sortedFrequencyCounts = from v in frequencyCounts orderby v.Key  orderby v.Value descending select v;
             var top10 = sortedFrequencyCounts.Take(10);
 
             Console.WriteLine("***********  TOP 10 ********************");
@@ -52,7 +52,7 @@ namespace frequenyProj
             }
 
 
-       
+
 
 
 

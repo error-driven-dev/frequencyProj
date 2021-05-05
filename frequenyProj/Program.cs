@@ -45,7 +45,7 @@ namespace frequenyProj
             }
 
 
-            Console.WriteLine("\n\n*********** ALL RESULTS IN DECENDING ORDER ********************");
+            Console.WriteLine("\n\n*********** ALL RESULTS IN DESCENDING ORDER ********************");
             foreach (KeyValuePair<string, int> total in sortedFrequencyCounts)
             {
                 Console.WriteLine("Count: {0} Camera Combo: {1} ", total.Value, total.Key);
